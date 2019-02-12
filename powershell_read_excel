@@ -1,0 +1,17 @@
+Param($sourcePath)
+Write-Host -ForegroundColor Cyan $sourcePath
+$xl = new-object -comobject excel.application
+$xl.displayAlerts = $false
+$xl.Visible = $false
+$excel = $xl.Workbooks.Open($sourcePath, $true)
+$sheet=$excel.Worksheets.Item(1)
+Write-Host -ForegroundColor Cyan "Loading Application..."
+
+#$Name = $sheet.Range("B1").Text
+$Name = $sheet.Cells.Item(1,1).text
+Write-Host -ForegroundColor Cyan "$Name"
+$sheet.Cells.Item(1,1) | get-member
+
+$xl.Quit()
+$xl = $null
+[GC]::Collect()
