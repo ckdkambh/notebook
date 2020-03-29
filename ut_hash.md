@@ -28,7 +28,7 @@
   * [查找结点](#-----3)
   * [遍历节点](#-----3)
   * [删除节点](#-----3)
-- [其他遍历函数](#------)
+- [其他简便函数](#------)
 
 - 文档 http://troydhanson.github.io/uthash/userguide.html
 
@@ -245,7 +245,7 @@ void FindNode(void *key)
 同通用hash的遍历方式
 ## 删除节点
 同通用hash的删除方式
-# 其他遍历函数
+# 其他简便函数
 |macro|arguments|
 |:-:|:-:|
 |HASH_DEL|(head, item_ptr)|
