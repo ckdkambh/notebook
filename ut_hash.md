@@ -67,7 +67,6 @@ VOID PrintNode()
 |:-:|:-:|
 |HASH_ITER|(hh_name, head, item_ptr, tmp_item_ptr)|
 ## 删除节点
-
 ```
 VOID DeleteNode(MyHash *nodeToDelete)
 {
@@ -91,3 +90,46 @@ HASH_CNT(handle, g_hashHead)
 |macro|arguments|
 |:-:|:-:|
 |HASH_CNT|(hh_name, head)|
+# int型key的简便hash表
+## 定义结构体
+```
+typedef struct {
+    UT_hash_handle handle; // handle,不用初始化
+    int key;         // key
+    char data[100];        // data
+} MyIntHash;  
+```
+## 定义头节点
+- hash需要定义头节点，可以使用全局变量
+```
+MyIntHash *g_intHashHead = NULL; // 头节点一定要初始化成空指针
+```
+## 添加节点
+```
+void AddNode(int key, char *data)
+{
+    MyHash node = { 0 };
+    node.key = key;
+    memcpy(node.data, data, sizeof(char) * 100);
+    HASH_ADD_INT(g_intHashHead, key, &node);
+}
+```
+|macro|arguments|
+|:-:|:-:|
+|HASH_ADD_INT|(head, keyfield_name, item_ptr)|
+## 查找结点
+```
+MyHash *FindNode(int key)
+{
+    HASH_FIND_INT(g_intHashHead, &key, &node);
+    return node;
+}
+```
+查找不到key时，返回NULL
+|macro|arguments|
+|:-:|:-:|
+|HASH_FIND_INT|(head, key_ptr, item_ptr)|
+## 遍历节点
+同通用hash的遍历方式
+## 删除节点
+同通用hash的删除方式
