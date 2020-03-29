@@ -28,10 +28,10 @@
   * [查找结点](#查找结点-3)
   * [遍历节点](#遍历节点-3)
   * [删除节点](#删除节点-3)
-- [其他简便函数](#其他简便函数)
+- [其他函数](#其他函数)
 - [leetcode例题](#leetcode例题)
 
-- 文档 http://troydhanson.github.io/uthash/userguide.html
+- 文档 http://troydhanson.github.io/uthash/userguide.html  https://blog.csdn.net/JT_Notes/article/details/81330023
 
 # 通用key结构hash
 在uthash中，并不会对其所储存的值进行移动或者复制，也不会进行内存的释放。每个节点的内存都要自己__malloc__，不能使用局部变量，否则可能异常。
@@ -58,7 +58,7 @@ void AddNode(long long key, char *data)
     HASH_ADD(handle, g_hashHead, key, sizeof(long long), node);
 }
 ```
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_ADD|(hh_name, head, keyfield_name, key_len, item_ptr)|
 
@@ -72,7 +72,7 @@ void FindNode(long long key)
 }
 ```
 查找不到key时，返回NULL
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_FIND|(hh_name, head, key_ptr, key_len, item_ptr)|
 ## 遍历节点
@@ -86,7 +86,7 @@ VOID PrintNode()
     }
 }
 ```
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_ITER|(hh_name, head, item_ptr, tmp_item_ptr)|
 ## 删除节点
@@ -96,7 +96,7 @@ VOID DeleteNode(MyHash *nodeToDelete)
     HASH_DELETE(handle, g_hashHead, nodeToDelete);
 }
 ```
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_DELETE|(hh_name, head, item_ptr)|
 ## 删除整个hash表
@@ -110,7 +110,7 @@ HASH_CLEAR(handle, g_hashHead)
 ```
 HASH_CNT(handle, g_hashHead)
 ```
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_CNT|(hh_name, head)|
 # int型key的简便hash表
@@ -137,7 +137,7 @@ void AddNode(int key, char *data)
     HASH_ADD_INT(g_intHashHead, key, node);
 }
 ```
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_ADD_INT|(head, keyfield_name, item_ptr)|
 ## 查找结点
@@ -150,7 +150,7 @@ void FindNode(int key)
 }
 ```
 查找不到key时，返回NULL
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_FIND_INT|(head, key_ptr, item_ptr)|
 ## 遍历节点
@@ -181,7 +181,7 @@ void AddNode(char *key, char *data)
     HASH_ADD_STR(g_strHashHead, key, node);
 }
 ```
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_ADD_STR|(head, keyfield_name, item_ptr)|
 ## 查找结点
@@ -194,7 +194,7 @@ void FindNode(char *key)
 }
 ```
 查找不到key时，返回NULL
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_FIND_STR|(head, key_ptr, item_ptr)|
 ## 遍历节点
@@ -226,7 +226,7 @@ void AddNode(void *key, char *data)
     HASH_ADD_PTR(g_strHashHead, key, node);
 }
 ```
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_ADD_PTR|(head, keyfield_name, item_ptr)|
 ## 查找结点
@@ -239,18 +239,20 @@ void FindNode(void *key)
 }
 ```
 查找不到key时，返回NULL
-|macro|arguments|
+|名称|参数|
 |:-:|:-:|
 |HASH_FIND_PTR|(head, key_ptr, item_ptr)|
 ## 遍历节点
 同通用hash的遍历方式 [遍历节点](#遍历节点)
 ## 删除节点
 同通用hash的删除方式 [删除节点](#删除节点)
-# 其他简便函数
-|macro|arguments|
+# 其他函数
+|名称|参数|功能|
 |:-:|:-:|
-|HASH_DEL|(head, item_ptr)|
-|HASH_SORT|(head, cmp)|
-|HASH_COUNT|(head)|
+|HASH_DEL|(head, item_ptr)|基于HASH_DELETE的宏|
+|HASH_SORT|(head, cmp)|基于HASH_SRT的宏|
+|HASH_COUNT|(head)|将源hash表中复合条件的元素添加到目标hash表|
+|HASH_SELECT|(dst_hh_name, dst_head, src_hh_name, src_head, condition)|基于HASH_CNT的宏|
+|HASH_OVERHEAD|(hh_name, head)|统计hash表内部结构消耗的内存|
 # leetcode例题
 int型key和字符串型key hash:https://leetcode-cn.com/problems/design-underground-system/
