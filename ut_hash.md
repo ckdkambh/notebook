@@ -10,7 +10,7 @@
 
 - 文档 http://troydhanson.github.io/uthash/userguide.html
 
-# 通用结构hash
+# 通用key结构hash
 在uthash中，并不会对其所储存的值进行移动或者复制，也不会进行内存的释放。
 ## 定义结构体
 ```
@@ -41,11 +41,11 @@ void AddNode(long long key, char *data)
 
 ## 查找结点
 ```
-MyHash *FindNode(long long key)
+void FindNode(long long key)
 {
     MyHash *node;
     HASH_FIND(handle, g_hashHead, &key, sizeof(long long), node);
-    return node;
+    printf("%lld, %s", node->key, node->data);
 }
 ```
 查找不到key时，返回NULL
@@ -95,7 +95,7 @@ HASH_CNT(handle, g_hashHead)
 ```
 typedef struct {
     UT_hash_handle handle; // handle,不用初始化
-    int key;         // key
+    int key;               // key
     char data[100];        // data
 } MyIntHash;  
 ```
@@ -108,7 +108,7 @@ MyIntHash *g_intHashHead = NULL; // 头节点一定要初始化成空指针
 ```
 void AddNode(int key, char *data)
 {
-    MyHash node = { 0 };
+    MyIntHash node = { 0 };
     node.key = key;
     memcpy(node.data, data, sizeof(char) * 100);
     HASH_ADD_INT(g_intHashHead, key, &node);
@@ -119,10 +119,11 @@ void AddNode(int key, char *data)
 |HASH_ADD_INT|(head, keyfield_name, item_ptr)|
 ## 查找结点
 ```
-MyHash *FindNode(int key)
+void FindNode(int key)
 {
-    HASH_FIND_INT(g_intHashHead, &key, &node);
-    return node;
+    MyIntHash *node;
+    HASH_FIND_INT(g_intHashHead, &key, node);
+    printf("%d, %s", node->key, node->data);
 }
 ```
 查找不到key时，返回NULL
@@ -133,3 +134,98 @@ MyHash *FindNode(int key)
 同通用hash的遍历方式
 ## 删除节点
 同通用hash的删除方式
+# 字符串型key的简便hash
+## 定义结构体
+```
+typedef struct {
+    UT_hash_handle handle; // handle,不用初始化
+    char key[20];          // key
+    char data[100];        // data
+} MyStrHash;  
+```
+## 定义头节点
+- hash需要定义头节点，可以使用全局变量
+```
+MyStrHash *g_strHashHead = NULL; // 头节点一定要初始化成空指针
+```
+## 添加节点
+```
+void AddNode(char *key, char *data)
+{
+    MyStrHash node = { 0 };
+    strcpy(node.key, key);
+    memcpy(node.data, data, sizeof(char) * 100);
+    HASH_ADD_STR(g_strHashHead, key, &node);
+}
+```
+|macro|arguments|
+|:-:|:-:|
+|HASH_ADD_STR|(head, keyfield_name, item_ptr)|
+## 查找结点
+```
+void FindNode(char *key)
+{
+    MyStrHash *node;
+    HASH_FIND_STR(g_strHashHead, key, node);
+    printf("%s, %s", node->key, node->data);
+}
+```
+查找不到key时，返回NULL
+|macro|arguments|
+|:-:|:-:|
+|HASH_FIND_STR|(head, key_ptr, item_ptr)|
+## 遍历节点
+同通用hash的遍历方式
+## 删除节点
+同通用hash的删除方式
+
+# 指针型key的简便hash
+## 定义结构体
+```
+typedef struct {
+    UT_hash_handle handle; // handle,不用初始化
+    void *key;             // key
+    char data[100];        // data
+} MyPointHash;  
+```
+## 定义头节点
+- hash需要定义头节点，可以使用全局变量
+```
+MyPointHash *g_pointHashHead = NULL; // 头节点一定要初始化成空指针
+```
+## 添加节点
+```
+void AddNode(void *key, char *data)
+{
+    MyPointHash node = { 0 };
+    node.key = key;
+    memcpy(node.data, data, sizeof(char) * 100);
+    HASH_ADD_PTR(g_strHashHead, key, &node);
+}
+```
+|macro|arguments|
+|:-:|:-:|
+|HASH_ADD_PTR|(head, keyfield_name, item_ptr)|
+## 查找结点
+```
+void FindNode(void *key)
+{
+    MyStrHash *node;
+    HASH_FIND_PTR(g_strHashHead, &key, node);
+    printf("%p, %s", node->key, node->data);
+}
+```
+查找不到key时，返回NULL
+|macro|arguments|
+|:-:|:-:|
+|HASH_FIND_PTR|(head, key_ptr, item_ptr)|
+## 遍历节点
+同通用hash的遍历方式
+## 删除节点
+同通用hash的删除方式
+# 其他遍历函数
+|macro|arguments|
+|:-:|:-:|
+|HASH_DEL|(head, item_ptr)|
+|HASH_SORT|(head, cmp)|
+|HASH_COUNT|(head)|
