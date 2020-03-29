@@ -255,5 +255,5 @@ void FindNode(void *key)
 |HASH_SELECT|(dst_hh_name, dst_head, src_hh_name, src_head, condition)|将源hash表中复合条件的元素添加到目标hash表|
 |HASH_OVERHEAD|(hh_name, head)|统计hash表内部结构消耗的内存|
 # leetcode例题
-int型key和字符串型key的hash: https://leetcode-cn.com/problems/design-underground-system/
-字符串型hash:https://leetcode-cn.com/problems/words-frequency-lcci/submissions/
+- int型key和字符串型key的hash: https://leetcode-cn.com/problems/design-underground-system/
+- 字符串型hash:https://leetcode-cn.com/problems/words-frequency-lcci/submissions/
