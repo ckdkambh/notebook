@@ -248,7 +248,7 @@ void FindNode(void *key)
 同通用hash的删除方式 [删除节点](#删除节点)
 # 其他函数
 |名称|参数|功能|
-|:-:|:-:|
+|:-:|:-:|:-:|
 |HASH_DEL|(head, item_ptr)|基于HASH_DELETE的宏|
 |HASH_SORT|(head, cmp)|基于HASH_SRT的宏|
 |HASH_COUNT|(head)|将源hash表中复合条件的元素添加到目标hash表|
