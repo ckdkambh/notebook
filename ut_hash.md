@@ -29,11 +29,12 @@
   * [遍历节点](#遍历节点-3)
   * [删除节点](#删除节点-3)
 - [其他简便函数](#其他简便函数)
+- [leetcode例题](#leetcode例题)
 
 - 文档 http://troydhanson.github.io/uthash/userguide.html
 
 # 通用key结构hash
-在uthash中，并不会对其所储存的值进行移动或者复制，也不会进行内存的释放。每个节点的内存都要自己malloc，不能使用局部变量，否则可能异常。
+在uthash中，并不会对其所储存的值进行移动或者复制，也不会进行内存的释放。每个节点的内存都要自己__malloc__，不能使用局部变量，否则可能异常。
 ## 定义结构体
 ```
 typedef struct {
@@ -251,3 +252,5 @@ void FindNode(void *key)
 |HASH_DEL|(head, item_ptr)|
 |HASH_SORT|(head, cmp)|
 |HASH_COUNT|(head)|
+# leetcode例题
+int型key和字符串型key hash:https://leetcode-cn.com/submissions/detail/58064431/
