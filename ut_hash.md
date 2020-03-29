@@ -153,9 +153,9 @@ void FindNode(int key)
 |:-:|:-:|
 |HASH_FIND_INT|(head, key_ptr, item_ptr)|
 ## 遍历节点
-同通用hash的遍历方式 * [遍历节点](#遍历节点)
+同通用hash的遍历方式 [遍历节点](#遍历节点)
 ## 删除节点
-同通用hash的删除方式 * [删除节点](#删除节点)
+同通用hash的删除方式 [删除节点](#删除节点)
 # 字符串型key的简便hash
 ## 定义结构体
 ```
@@ -197,9 +197,9 @@ void FindNode(char *key)
 |:-:|:-:|
 |HASH_FIND_STR|(head, key_ptr, item_ptr)|
 ## 遍历节点
-同通用hash的遍历方式 * [遍历节点](#遍历节点)
+同通用hash的遍历方式 [遍历节点](#遍历节点)
 ## 删除节点
-同通用hash的删除方式 * [删除节点](#删除节点)
+同通用hash的删除方式 [删除节点](#删除节点)
 
 # 指针型key的简便hash
 ## 定义结构体
@@ -242,9 +242,9 @@ void FindNode(void *key)
 |:-:|:-:|
 |HASH_FIND_PTR|(head, key_ptr, item_ptr)|
 ## 遍历节点
-同通用hash的遍历方式 * [遍历节点](#遍历节点)
+同通用hash的遍历方式 [遍历节点](#遍历节点)
 ## 删除节点
-同通用hash的删除方式 * [删除节点](#删除节点)
+同通用hash的删除方式 [删除节点](#删除节点)
 # 其他简便函数
 |macro|arguments|
 |:-:|:-:|
