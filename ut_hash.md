@@ -33,7 +33,7 @@
 - 文档 http://troydhanson.github.io/uthash/userguide.html
 
 # 通用key结构hash
-在uthash中，并不会对其所储存的值进行移动或者复制，也不会进行内存的释放。
+在uthash中，并不会对其所储存的值进行移动或者复制，也不会进行内存的释放。每个节点的内存都要自己malloc，不能使用局部变量，否则可能异常。
 ## 定义结构体
 ```
 typedef struct {
@@ -51,10 +51,10 @@ MyHash *g_hashHead = NULL; // 头节点一定要初始化成空指针
 ```
 void AddNode(long long key, char *data)
 {
-    MyHash node = { 0 };
-    node.key = key;
+    MyHash *node = malloc(sizeof(MyHash));
+    node->key = key;
     memcpy(node.data, data, sizeof(char) * 100);
-    HASH_ADD(handle, g_hashHead, key, sizeof(long long), &node);
+    HASH_ADD(handle, g_hashHead, key, sizeof(long long), node);
 }
 ```
 |macro|arguments|
@@ -130,10 +130,10 @@ MyIntHash *g_intHashHead = NULL; // 头节点一定要初始化成空指针
 ```
 void AddNode(int key, char *data)
 {
-    MyIntHash node = { 0 };
-    node.key = key;
-    memcpy(node.data, data, sizeof(char) * 100);
-    HASH_ADD_INT(g_intHashHead, key, &node);
+    MyIntHash *node = malloc(sizeof(MyIntHash));
+    node->key = key;
+    memcpy(node->data, data, sizeof(char) * 100);
+    HASH_ADD_INT(g_intHashHead, key, node);
 }
 ```
 |macro|arguments|
@@ -174,10 +174,10 @@ MyStrHash *g_strHashHead = NULL; // 头节点一定要初始化成空指针
 ```
 void AddNode(char *key, char *data)
 {
-    MyStrHash node = { 0 };
-    strcpy(node.key, key);
-    memcpy(node.data, data, sizeof(char) * 100);
-    HASH_ADD_STR(g_strHashHead, key, &node);
+    MyStrHash *node = malloc(sizeof(MyStrHash));
+    strcpy(node->key, key);
+    memcpy(node->data, data, sizeof(char) * 100);
+    HASH_ADD_STR(g_strHashHead, key, node);
 }
 ```
 |macro|arguments|
@@ -219,10 +219,10 @@ MyPointHash *g_pointHashHead = NULL; // 头节点一定要初始化成空指针
 ```
 void AddNode(void *key, char *data)
 {
-    MyPointHash node = { 0 };
+    MyPointHash *node = malloc(sizeof(MyPointHash));
     node.key = key;
     memcpy(node.data, data, sizeof(char) * 100);
-    HASH_ADD_PTR(g_strHashHead, key, &node);
+    HASH_ADD_PTR(g_strHashHead, key, node);
 }
 ```
 |macro|arguments|
