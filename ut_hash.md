@@ -253,4 +253,4 @@ void FindNode(void *key)
 |HASH_SORT|(head, cmp)|
 |HASH_COUNT|(head)|
 # leetcode例题
-int型key和字符串型key hash:https://leetcode-cn.com/submissions/detail/58064431/
+int型key和字符串型key hash:https://leetcode-cn.com/problems/design-underground-system/
