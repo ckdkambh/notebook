@@ -257,3 +257,4 @@ void FindNode(void *key)
 # leetcode例题
 - int型key和字符串型key的hash: https://leetcode-cn.com/problems/design-underground-system/
 - 字符串型hash:https://leetcode-cn.com/problems/words-frequency-lcci/submissions/
+- 其他类型key:https://leetcode-cn.com/problems/best-line-lcci/
