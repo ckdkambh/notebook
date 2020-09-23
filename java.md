@@ -5,3 +5,4 @@
 - [容器类](https://blog.csdn.net/qq_37465368/article/details/80854672)
 - java不能直接new基础类型，但是可以new基础类型的数组
 - new数组的大小可以是变量，类似malloc
+- Arrays.toString()
