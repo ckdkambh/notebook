@@ -6,3 +6,6 @@
 - java不能直接new基础类型，但是可以new基础类型的数组
 - new数组的大小可以是变量，类似malloc
 - Arrays.toString()
+- dispose是清理函数，类似析构，但是不释放内存，能保证顺序，finalize释放内存，但是不保证顺序。
+- 重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！
+- [重装重写区别]（https://www.runoob.com/java/java-override-overload.html）
