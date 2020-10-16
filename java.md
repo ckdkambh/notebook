@@ -22,3 +22,4 @@
 - 构造函数里避免使用多态的函数，尽量只使用final的函数
 - 多态允许返回有继承关系的函数
 - 实现接口的方法必须是public的，
+- interface里的值默认是static final,函数默认是public的
