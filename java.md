@@ -23,3 +23,5 @@
 - 多态允许返回有继承关系的函数
 - 实现接口的方法必须是public的，
 - interface里的值默认是static final,函数默认是public的
+- interface可以嵌套，但是嵌套内部的interface不能为private,因为没法实现
+- 接口和内部类组合可以生成完全隐蔽的类
