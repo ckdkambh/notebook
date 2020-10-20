@@ -25,3 +25,7 @@
 - interface里的值默认是static final,函数默认是public的
 - interface可以嵌套，但是嵌套内部的interface不能为private,因为没法实现
 - 接口和内部类组合可以生成完全隐蔽的类
+- 内部类算是一种多重继承
+- return new B(){};是一个匿名内部类的意思
+- 接口实现回调函数机制，且能保证不像指针会被乱用
+- 
