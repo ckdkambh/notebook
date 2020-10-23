@@ -8,7 +8,7 @@
 - Arrays.toString()
 - dispose是清理函数，类似析构，但是不释放内存，能保证顺序，finalize释放内存，但是不保证顺序。
 - 重写是子类对父类的允许访问的方法的实现过程进行重新编写, 返回值和形参都不能改变。即外壳不变，核心重写！
-- [重装重写区别]（https://www.runoob.com/java/java-override-overload.html）
+- [重装重写区别](https://www.runoob.com/java/java-override-overload.html)
 - 判断是否需要进行继承，可以判断当前模型是否需要 向上转型，需要则可以使用继承，否则使用组合模式
 - final int[] a = { 1, 2, 3 };//数组也是对象，所以支持引用的const
 - final可以是运行时值
