@@ -30,3 +30,4 @@
 - 接口实现回调函数机制，且能保证不像指针会被乱用
 - 局部内部类比匿名内部类多了已命名的构造器，匿名内部类只能用实例初始化
 - 每个类都有它自己的class文件，包括内部类和匿名类
+- [finally+break，continue，return](https://www.cnblogs.com/bethunebtj/p/4676020.html)
