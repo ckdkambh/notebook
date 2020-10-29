@@ -36,3 +36,4 @@
 - finally 语句块应该是在控制转移语句之前执行，控制转移语句除了 return 外，还有 break 和 continue。另外，throw 语句也属于控制转移语句。虽然 return、throw、break 和 continue 都是控制转移语句，但是它们之间是有区别的。其中 return 和 throw 把程序控制权转交给它们的调用者（invoker），而 break 和 continue 的控制权是在当前方法内转移。
 - 不能通过异常说明来重载函数
 - 基类里的异常说明里的异常不一定会出现在子类里
+- runtime exception和普通的异常的区别是普通异常是必检异常，runtime是可选异常，可以catch，不处理的话，编译器不会报错
