@@ -31,3 +31,8 @@
 - 局部内部类比匿名内部类多了已命名的构造器，匿名内部类只能用实例初始化
 - 每个类都有它自己的class文件，包括内部类和匿名类
 - [finally+break，continue，return](https://www.cnblogs.com/bethunebtj/p/4676020.html)
+- 只有与 finally 相对应的 try 语句块得到执行的情况下，finally 语句块才会执行。以上两种情况，都是在 try 语句块之前返回（return）或者抛出异常，所以 try 对应的 finally 语句块没有执行。
+- 当一个线程在执行 try 语句块或者 catch 语句块时被打断（interrupted）或者被终止（killed），与其相对应的 finally 语句块可能不会执行。还有更极端的情况，就是在线程运行 try 语句块或者 catch 语句块时，突然死机或者断电，finally 语句块肯定不会执行了。可能有人认为死机、断电这些理由有些强词夺理，没有关系，我们只是为了说明这个问题。
+- finally 语句块应该是在控制转移语句之前执行，控制转移语句除了 return 外，还有 break 和 continue。另外，throw 语句也属于控制转移语句。虽然 return、throw、break 和 continue 都是控制转移语句，但是它们之间是有区别的。其中 return 和 throw 把程序控制权转交给它们的调用者（invoker），而 break 和 continue 的控制权是在当前方法内转移。
+- 不能通过异常说明来重载函数
+- 基类里的异常说明里的异常不一定会出现在子类里
