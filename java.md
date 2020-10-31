@@ -39,4 +39,4 @@
 - runtime exception和普通的异常的区别是普通异常是必检异常，runtime是可选异常，可以catch，不处理的话，编译器不会报错
 - java不允许程序员重载操作符
 - 使用super.toString()打印地址
-- 
+- 有继承关系的类之间的class文件没有继承关系
