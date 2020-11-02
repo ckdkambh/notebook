@@ -41,3 +41,4 @@
 - 使用super.toString()打印地址
 - 有继承关系的类之间的class文件没有继承关系
 - [各种数组包装类转换](https://blog.csdn.net/weixin_41615787/article/details/85115620)
+- instanceof是表达式，不是利于和for循环结合，代码复杂，isInstance是class类的函数，可以跟type.class组合。
