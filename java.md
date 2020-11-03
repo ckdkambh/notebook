@@ -42,3 +42,6 @@
 - 有继承关系的类之间的class文件没有继承关系
 - [各种数组包装类转换](https://blog.csdn.net/weixin_41615787/article/details/85115620)
 - instanceof是表达式，不是利于和for循环结合，代码复杂，isInstance是class类的函数，可以跟type.class组合。
+- java就设计了Class这个类.用于虚拟机对类的管理.当一个类被虚拟机装载完毕的时候,就会创建一个Class类
+- [class loader 类加载机制](https://frank909.blog.csdn.net/article/details/54973413?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param)
+
