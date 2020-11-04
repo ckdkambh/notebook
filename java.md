@@ -45,4 +45,7 @@
 - java就设计了Class这个类.用于虚拟机对类的管理.当一个类被虚拟机装载完毕的时候,就会创建一个Class类
 - [class loader 类加载机制](https://frank909.blog.csdn.net/article/details/54973413?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param)
 - 反射机制，可以绕过private封装的方法和接口封装的类，但是对final值域没有影响
-
+- 泛型只有在赋值语句里才能自动类型推导，其他，比如参入传入，可以用.<>的语法指定泛型函数入参类型
+- < extends T>是为了解决擦除问题
+- 泛型类型只有在静态类型检查期间才出现。再此之后会被擦除成他的非泛型上界
+- 擦除为了解决泛型和非泛型兼容
