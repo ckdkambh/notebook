@@ -56,4 +56,3 @@
 - [java泛型关键字理解](https://www.cnblogs.com/hf-cherish/p/4387662.html)
 - List表示持有任何Object类型的原生List，其实就等价于List<Object>，List<?>表示某种具有特定类型的非原生List(同构集合)，只是我们不知道它的具体类型是什么，所以我们就不允许往里set数据
 - [自限定类型](https://www.cnblogs.com/allmignt/p/12353745.html)
-- 自限定类型，相当于把定义的类型从继承关系中剥离，该类型不能再参与继承，只能自己和自己打交道，类似链表定义
