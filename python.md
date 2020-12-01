@@ -7,5 +7,5 @@
 - asyncio.run报错，可以用以下代码代替
 ```
         loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.GetAllMemberMr())
+        loop.run_until_complete(func())
 ```
