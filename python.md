@@ -13,5 +13,6 @@
 - 递归定义defaultdict
 ```
 nested_dict = lambda: defaultdict(nested_dict)
+nest = nested_dict()
 ```
 
