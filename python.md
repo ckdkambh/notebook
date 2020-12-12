@@ -10,3 +10,8 @@
         loop.run_until_complete(func())
 ```
 - [python类变量，实例变量的区别](https://blog.csdn.net/weixin_39986952/article/details/84842567)
+- 递归定义defaultdict
+```
+nested_dict = lambda: defaultdict(nested_dict)
+```
+
