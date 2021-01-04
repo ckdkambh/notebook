@@ -57,3 +57,4 @@
 - List表示持有任何Object类型的原生List，其实就等价于List<Object>，List<?>表示某种具有特定类型的非原生List(同构集合)，只是我们不知道它的具体类型是什么，所以我们就不允许往里set数据
 - [自限定类型](https://www.cnblogs.com/allmignt/p/12353745.html)
 - [泛型](https://www.cnblogs.com/coprince/p/8603492.html)
+- 泛型主要解决编译时期就能发现问题
