@@ -61,3 +61,4 @@
 - <?>提供了只读的功能
 - https://blog.csdn.net/briblue/article/details/76736356 借助于无限定通配符却可以，前面讲过 ？代表未知类型，所以它涉及的操作都基本上与类型无关，因此 jvm 不需要针对它对类型作判断，因此它能编译通过，但是，只提供了数组中的元素因为通配符原因，它只能读，不能写。比如，上面的 v 这个局部变量，它只能进行 get() 操作，不能进行 add() 操作，这个在前面通配符的内容小节中已经讲过。
 - [rewind与flip的用法差异](https://blog.csdn.net/yiifaa/article/details/77652914)
+- Runtime.getRuntime().freeMemory()获取JVM申请的内存大小
