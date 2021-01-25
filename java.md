@@ -63,3 +63,4 @@
 - [rewind与flip的用法差异](https://blog.csdn.net/yiifaa/article/details/77652914)
 - Runtime.getRuntime().freeMemory()获取JVM申请的内存大小
 - 装饰器，包装方法，把数组包装成buffer，ByteBuffer sendBuffer=ByteBuffer.wrap(sendString.getBytes("UTF-16"));
+- JRuby, JPython
