@@ -66,4 +66,4 @@
 - JRuby, JPython
 - 单例双重检查锁定，主要是为了兼容效率和竞争解决 [单例模型锁的分析](https://blog.csdn.net/chenchaofuck1/article/details/51702129/) 底线就是：无论以何种形式，都不应使用双重检查锁定，因为您不能保证它在任何 JVM 实现上都能顺利运行。
 - [IOUtils](https://blog.csdn.net/weixin_42636552/article/details/109035895)
-
+- CountDownLatch 进行异步转同步操作
