@@ -73,3 +73,4 @@
 - 现今主流的 JVM 实现都把 Java 线程一一映射到操作系统底层的线程上，把调度委托给了操作系统，我们在虚拟机层面看到的状态实质是对底层状态的映射及包装。JVM 本身没有做什么实质的调度，把底层的 ready 及 running 状态映射上来也没多大意义，因此，统一成为runnable 状态是不错的选择。
 - 处于 runnable 状态下的线程正在* Java 虚拟机中执行，但它可能正在等待*来自于操作系统的其它资源，比如处理器。
 - quartz https://www.cnblogs.com/zhenyuyaodidiao/p/4755649.html
+- G1 GC https://tech.meituan.com/2016/09/23/g1.html
