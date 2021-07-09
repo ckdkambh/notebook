@@ -1,4 +1,4 @@
 - CAP理论
 - 琐失效
 - 分布式锁
-- 
+- Service Mesh， https://zhuanlan.zhihu.com/p/61901608
